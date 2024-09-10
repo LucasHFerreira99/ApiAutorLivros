@@ -53,7 +53,7 @@ namespace ApiAutorLivro.Controllers
         }
 
         [HttpDelete("RemoverAutor/{idAutor}")]
-        public async Task<ActionResult<ResponseModel<List<AutorModel>>>> EditaRemoverAutorrAutor(int idAutor)
+        public async Task<ActionResult<ResponseModel<List<AutorModel>>>> RemoverAutorrAutor(int idAutor)
         {
             var autores = await _autorInterface.RemoverAutor(idAutor);
             return Ok(autores);

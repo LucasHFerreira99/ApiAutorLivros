@@ -1,12 +1,15 @@
 using ApiAutorLivro.Data;
 using ApiAutorLivro.Services.Autor;
+using ApiAutorLivro.Services.Livro;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -17,6 +20,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 builder.Services.AddScoped<IAutorInterface, AutorService>();
+builder.Services.AddScoped<ILivroInterface, LivroService>();
 
 var app = builder.Build();
 
